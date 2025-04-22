@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Grass Mowing Simulator - Relaxing Simulation Game</title>
+    <meta name="description" content="Play Stone Grass Mowing Simulator, an immersive simulation game where you experience the peaceful satisfaction of lawn maintenance.">
+    <link rel="canonical" href="https://nibelpath.com" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --apple-blue: #007AFF;
+            --apple-gray: #F5F5F7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header Section -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                Stone Grass Mowing Simulator
+            </h1>
+            <p class="text-xl text-gray-600">
+                Experience the zen of virtual lawn maintenance in this relaxing simulation game
+            </p>
+        </header>
+
+        <!-- Game Container -->
+        <div class="relative w-full overflow-hidden rounded-xl shadow-lg mb-8" style="padding-top: 56.25%">
+            <div id="game-container">
+                <iframe 
+                    src="https://www.crazygames.com/embed/stone-grass-mowing-simulator"
+                    class="absolute top-0 left-0 w-full h-full border-0"
+                    allow="fullscreen"
+                    loading="lazy"
+                    title="Stone Grass Mowing Simulator Game"
+                    onerror="handleGameError()"
+                    id="game-frame">
+                </iframe>
+                
+                <!-- Error Message Container -->
+                <div id="error-container" class="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-95 hidden flex items-center justify-center text-center p-4">
+                    <div class="space-y-4">
+                        <div class="text-white text-xl font-semibold">
+                            Oops! We're having trouble loading the game.
+                        </div>
+                        <p class="text-gray-300">
+                            Please try refreshing the page or check back later.
+                        </p>
+                        <button onclick="retryLoadGame()" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg transition-colors">
+                            Try Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Details -->
+        <div class="space-y-8">
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+                    About The Game
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Stone Grass Mowing Simulator puts you in control of maintaining pristine virtual lawns. Experience the satisfaction of perfectly trimmed grass in this peaceful simulation game that combines relaxation with precision.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+                    Key Features
+                </h2>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>Realistic grass mowing physics</li>
+                    <li>Peaceful and relaxing gameplay</li>
+                    <li>Multiple tools and equipment</li>
+                    <li>Progressive difficulty levels</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+                    How To Play
+                </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    Use your mouse or touch controls to navigate the mower across the lawn. Trim all grass to the perfect height while avoiding obstacles. Complete each level to unlock new challenges and equipment.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function handleGameError() {
+            document.getElementById('error-container').classList.remove('hidden');
+            document.getElementById('game-frame').classList.add('hidden');
+        }
+
+        function retryLoadGame() {
+            document.getElementById('error-container').classList.add('hidden');
+            document.getElementById('game-frame').classList.remove('hidden');
+            document.getElementById('game-frame').src = document.getElementById('game-frame').src;
+        }
+
+        // Check iframe loading status
+        window.addEventListener('load', function() {
+            const iframe = document.getElementById('game-frame');
+            iframe.addEventListener('error', handleGameError);
+        });
+    </script>
+</body>
+</html> 
